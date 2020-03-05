@@ -1,0 +1,1818 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+    <div class="theme-font-league theme-color-white-blue" style="width: 100%; height: 100%;">
+      <div class="reveal">
+        <div class="slides">
+          <section data-background-color="#4e2a8e">
+            <div class="sl-block" data-block-type="text" style="width: 863px; left: 49px; top: 140px; height: auto;">
+              <div class="sl-block-content" style="z-index: 12; color: rgb(255, 255, 255);">
+                <h1><span style="font-size:1.6em">Introduction to Elixir</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 275px; height: 400px; left: 648px; top: 80px;">
+              <div class="sl-block-style" style="z-index: 11; transform: rotate(9deg);">
+                <div class="sl-block-content" style="z-index: 11;"><img style="left: -59px; top: 0px; width: 400px; height: 400px;" data-natural-width="400" data-natural-height="400" data-crop-x="0.146221" data-crop-y="0" data-crop-width="0.6869" data-crop-height="1" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6765149/elixirlogo-removebg-preview.png"></div>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 277px;">
+              <div class="sl-block-content" style="z-index: 13; color: rgb(255, 255, 255);">
+                <p>from a Ruby PoV</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#444444">
+            <div class="sl-block" data-block-type="text" style="width: 960px; left: -52px; top: 15px; height: auto;">
+              <div class="sl-block-content" style="z-index: 12; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); padding: 20px; text-align: center; border-width: 1px;">
+                <h1>
+                  <span style="font-size:1.4em">About</span> <span style="font-size:1.4em">me</span>
+                </h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 421px; height: 479px; left: 510px; top: 191px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);">
+                <div class="sl-block-content" style="z-index: 11; border-color: rgb(34, 34, 34); border-width: 34px;"><img data-natural-width="1080" data-natural-height="1350" style="left: -82px; top: -103px; width: 520px; height: 650px;" data-crop-x="0.158786" data-crop-y="0.158319" data-crop-width="0.810385" data-crop-height="0.737066" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6765231/47583872_550240775454879_8688123740112127484_n.jpg"></div>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 426px; left: 37px; top: 271px;">
+              <div class="sl-block-content" style="z-index: 13; color: rgb(255, 255, 255); text-align: left;">
+                <p>I'm David</p>
+
+                <p><span class="emoji"><a href="https://emojipedia.org/nerd-face/" target="_blank">🤓</a>&nbsp;</span>I enjoy being a computer nerd since my 12th birthday.</p>
+
+                <p style="color:rgb(255, 255, 255)">🥏 I play ultimate frisbee at @culipardisk.</p>
+
+                <p style="color:rgb(255, 255, 255)"><span class="emoji">🚁 </span>I'm an amateur drone pilot</p>
+
+                <p style="color:rgb(255, 255, 255)"><span class="emoji"><a href="https://emojipedia.org/guitar/" target="_blank">🎸</a>A</span>&nbsp;guitar and bass player.</p>
+
+                <p style="color:rgb(255, 255, 255)">🕹️ I love IoT (and this is why I started learning Elixir)</p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 480px; height: 700px; left: 480px; top: 0px;">
+              <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(34, 34, 34)" data-shape-stretch="true" style="z-index: 10;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 480 700">
+                  <rect width="480" height="700" rx="0" ry="0" class="shape-element" fill="rgb(34, 34, 34)"></rect>
+              </svg></div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <h1><span style="font-size:1.4em">What's Elixir?</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 400px; height: 400px; left: 280px; top: 206px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="400" data-natural-height="400" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6765149/elixirlogo-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 170px; top: 246px;">
+              <div class="sl-block-content fragment" style="z-index: 12; background-color: rgba(255, 255, 255, 0.35);" data-fragment-index="0">
+                <p>"Elixir is a <strong>dynamic</strong>, <strong>functional</strong> language designed for building <strong>scalable </strong>and<strong> maintainable </strong>applications.</p>
+
+                <p>Elixir leverages the <strong>Erlang VM</strong>, known for running low-latency, <strong>distributed</strong> and <strong>fault-tolerant</strong> systems, while also being successfully used in <strong>web development</strong> and the <strong>embedded software</strong> domain."</p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <h1><span style="font-size:1.2em">WhY and When Elixir born</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 264px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <ul>
+                  <li class="fragment" data-fragment-index="0"><span style="font-size:0.7em">Created by <strong>José Valim </strong></span></li>
+                  <li class="fragment" data-fragment-index="1"><span style="font-size:0.7em">He was trying&nbsp; to improve the Ruby on Rails framework performance on multiple core systems</span></li>
+                  <li class="fragment" data-fragment-index="2"><span style="font-size:0.7em">He realized that Ruby was not well designed enough to solve concurrency problems, so he started to research how other technologies were doing it.</span></li>
+                  <li class="fragment" data-fragment-index="3"><span style="font-size:0.7em">He finally started to develop Elixir</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1><span style="font-size:1.2em">Why and When Elixir born</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 177px; top: 224px;">
+              <div class="sl-block-content" style="z-index: 11;" dir="ui">
+                <p><strong><span style="font-size:0.7em">Main goals of Elixir:</span></strong></p>
+
+                <ul>
+                  <li class="fragment" data-fragment-index="0"><span style="font-size:0.7em">Help developers to be productive</span></li>
+                  <li class="fragment" data-fragment-index="1"><span style="font-size:0.7em">Use all power available on our machines</span></li>
+                  <li class="fragment" data-fragment-index="2"><span style="font-size:0.7em">Improve the flexibility and productivity of the Erlang Virtual Machine (BEAM) while keeping the functionality of the tools provided by Erlang.</span></li>
+                </ul>
+
+                <p>&nbsp;</p>
+
+                <p style="color:rgb(48, 53, 61)">&nbsp;</p>
+              </div>
+              <grammarly-extension class="_1KJtL" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 12;">
+                <div data-grammarly-part="highlights" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 600px; height: 295.5px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; top: 0px; left: 0px;">
+                      <div style="height: 1276px; width: 3160px;">
+                        <div>
+                          <div class="_3F-Wk _3mEyK" style="top: 134.5px; left: 283px; width: 67px; height: 25px;"></div>
+                        </div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-grammarly-part="button" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 600px; height: 295.5px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; transform: translate(-100%, -100%); top: 291.5px; left: 596px; width: auto; height: auto; pointer-events: all;">
+                      <div style="flex-direction: row; display: flex;">
+                        <div style="position: relative;">
+                          <div class="_2okjE _1-uTj">
+                            <div class="_3r4Mt"><span class="_1JBIl j30Wa _3UORh _1AbXW"></span></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="_5WizN _34Jb6 _37oOc _1QzSN">
+                            <div class="_3YmQx">
+                              <div title="Found 1 error in text" class="_3QdKe">1</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </grammarly-extension>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1><span style="font-size:1.2em">WhY and When Elixir born</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 176px; top: 235px;">
+              <div class="sl-block-content" style="z-index: 11; transition-duration: 0.6s; transition-delay: 0.6s;" dir="ui" data-animation-type="scale-up">
+                <p><strong><span style="font-size:0.7em">Main goals of Elixir:</span></strong></p>
+
+                <p><span class="emoji">💥</span><strong>(BEAM!!)</strong></p>
+
+                <p><span style="color:rgb(48, 53, 61)">TL;DR;</span><strong>&nbsp; Make Erlang great again!</strong></p>
+
+                <p style="color:rgb(48, 53, 61)">&nbsp;</p>
+              </div>
+              <grammarly-extension class="_1KJtL" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 12;">
+                <div data-grammarly-part="highlights" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 600px; height: 295.5px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; top: 0px; left: 0px;">
+                      <div style="height: 1276px; width: 3160px;">
+                        <div>
+                          <div class="_3F-Wk _3mEyK" style="top: 134.5px; left: 283px; width: 67px; height: 25px;"></div>
+                        </div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-grammarly-part="button" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 600px; height: 295.5px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; transform: translate(-100%, -100%); top: 291.5px; left: 596px; width: auto; height: auto; pointer-events: all;">
+                      <div style="flex-direction: row; display: flex;">
+                        <div style="position: relative;">
+                          <div class="_2okjE _1-uTj">
+                            <div class="_3r4Mt"><span class="_1JBIl j30Wa _3UORh _1AbXW"></span></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="_5WizN _34Jb6 _37oOc _1QzSN">
+                            <div class="_3YmQx">
+                              <div title="Found 1 error in text" class="_3QdKe">1</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </grammarly-extension>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 70px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1>How Elixir LOOKS</h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 593px; height: auto;">
+              <div class="sl-block-content fragment" style="z-index: 11;" dir="ui" data-fragment-index="2">
+                <h2><span style="font-size:0.5em">spoiler ALert</span></h2>
+              </div>
+              <grammarly-extension class="_1KJtL" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 12;">
+                <div data-grammarly-part="highlights" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 806px; height: 74px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; top: 0px; left: 0px;">
+                      <div style="height: 1117px; width: 2726px;">
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-grammarly-part="button" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 806px; height: 74px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; transform: translate(-100%, -100%); top: 70px; left: 802px; width: auto; height: auto; pointer-events: all;">
+                      <div style="flex-direction: row; display: flex;">
+                        <div style="position: relative;"></div>
+                        <div>
+                          <div class="_5WizN _1QzSN">
+                            <div class="_3YmQx">
+                              <div title="Protected by Grammarly" class="_3QdKe">&nbsp;</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </grammarly-extension>
+            </div>
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 428px; left: 80px; top: 177px;">
+              <div class="sl-block-content notranslate fragment" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 14;" data-fragment-index="1">
+                <pre><code data-line-numbers="" style="padding: 5px;">iex(1)&gt; defmodule Greeter do
+                    ...(1)&gt;   def greet(name) do
+                    ...(1)&gt;     greetings = "Hello " &lt;&gt; name &lt;&gt; "!"
+                    ...(1)&gt;     IO.puts greetings
+                    ...(1)&gt;   end
+                    ...(1)&gt; end
+                    {:module, Greeter,
+                    &lt;&lt;70, 79, 82, 49, 0, 0, 5, 12, 66, 69, 65, 77, 65, 116, 85, 56, 0, 0, 0, 156,
+                    0, 0, 0, 17, 14, 69, 108, 105, 120, 105, 114, 46, 71, 114, 101, 101, 116,
+                    101, 114, 8, 95, 95, 105, 110, 102, 111, 95, ...&gt;&gt;, {:greet, 1}}
+                    iex(3)&gt; Greeter.greet("Málaga Scala developers")
+                    Hello Málaga Scala developers!
+                    :ok
+                    iex(4)&gt;
+                </code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 477px; height: 255px; left: 239px; top: 235px;">
+              <div class="sl-block-content notranslate fragment" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;" data-fragment-index="0">
+                <pre><code data-line-numbers="">defmodule Greeter do
+                    def greet(name) do
+                    greetings = "Hello " &lt;&gt; name &lt;&gt; "!"
+                    IO.puts greetings
+                    end
+                    end
+
+                    Greeter.greet("Málaga Scala developers")</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 103px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1><span style="font-size:1.4em">Tooling</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 300px; height: auto;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <ul>
+                  <li class="fragment" data-fragment-index="0"><span style="font-size:1.4em">IEx</span></li>
+                  <li class="fragment" data-fragment-index="1"><span style="font-size:1.4em">ExUnit</span></li>
+                  <li class="fragment" data-fragment-index="2"><span style="font-size:1.4em">Mix</span></li>
+                  <li class="fragment" data-fragment-index="3"><span style="font-size:1.4em">Hex.pm</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#aaaaaa">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">iex</h2>
+              </div>
+            </div>
+
+
+
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 723px; height: 240px; left: 119px; top: 250px;">
+              <div class="sl-block-content" style="z-index: 13;"><img data-natural-width="723" data-natural-height="240" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6774510/Captura_de_pantalla_de_2019-11-14_15-39-12.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#aaaaaa">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Exunit</h2>
+              </div>
+            </div>
+
+
+            <div class="sl-block" data-block-type="code" style="width: 731px; height: 335px; left: 115px; top: 198px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 10;">
+                <pre class="elixir"><code data-line-numbers=""># https://hexdocs.pm/ex_unit/ExUnit.html
+
+                    ExUnit.start()
+
+                    # 2) Create a new test module (test case) and use "ExUnit.Case".
+                    defmodule AssertionTest do
+                    # 3) Notice we pass "async: true", this runs the test case
+                    #    concurrently with other test cases. The individual tests
+                    #    within each test case are still run serially.
+                    use ExUnit.Case, async: true
+
+                    # 4) Use the "test" macro instead of "def" for clarity.
+                    test "the truth" do
+                    assert true
+                    end
+                    end</code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 174px; top: 585px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>"mix test" runs ExUnit files</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#aaaaaa">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 12;">
+                <h2 style="text-align:center">Mix</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 232px;">
+              <div class="sl-block-content" style="z-index: 13; background-color: rgb(68, 68, 68); color: rgb(255, 255, 255); padding: 33px;">
+                <p>Mix is like a tool for <strong>compiling</strong>, <strong>debugging</strong> and <strong>test</strong> your app, you can define any kind of task and it will take care of that, also manages <strong>library dependencie</strong>s and <strong>required dependant applications.</strong></p>
+
+                <p>Also <strong>helps to bootstrap projects</strong>, so, it's like <em>Bundler + rails bin + Procfile + Rake</em></p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#aaaaaa">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Mix</h2>
+              </div>
+            </div>
+
+
+            <div class="sl-block" data-block-type="code" style="width: 663px; height: 559px; left: 149px; top: 107px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 10;">
+                <pre class="elixir"><code data-line-numbers="">defmodule KV.MixProject do
+                    use Mix.Project
+
+                    def project do
+                    [
+                    app: :kv,
+                    version: "0.1.0",
+                    elixir: "~&gt; 1.9",
+                    start_permanent: Mix.env == :prod,
+                    deps: deps()
+                    ]
+                    end
+
+                    # Run "mix help compile.app" to learn about applications
+                    def application do
+                    [
+                    extra_applications: [:logger]
+                    ]
+                    end
+
+                    # Run "mix help deps" to learn about dependencies
+                    defp deps do
+                    [{:dep_from_hexpm, "~&gt; 0.3.0"}]
+                    end
+
+                    def aliases do
+  	                ["do.that": [run some/elixir/file.exs]]
+                    end
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1><span style="font-size:1.2em">WhY I should LEARN ELIXIR</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 473px; left: 241px; top: 331px;">
+              <div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0">
+                <p style="text-align: start; ">
+                  <font color="#30353d">Okay... Let me show some examples.</font>
+                </p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1><span style="font-size:1.2em">Some Elixir Highlights</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 473px; left: 244px; top: 264px;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <ul>
+                  <li style="text-align: start;">Compiles to Erlang bytecode</li>
+                  <li style="text-align: start;">Ruby-friendly syntax (not ruby!)</li>
+                  <li style="text-align: start;">co-exists with Erlang. You can use Erlang libraries in a native way</li>
+                  <li style="text-align: start;">Good documentation and growing community</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1><span style="font-size:1.2em">Some Elixir Highlights</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 473px; left: 244px; top: 264px;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <p style="text-align:start">Inherit all properties from Erlang</p>
+
+                <ul>
+                  <li style="text-align:start">Concurrent focused(lightweight threads)</li>
+                  <li style="text-align:start">Fault-tolerant (event-driven programming via message passing)</li>
+                  <li style="text-align:start">Scalability (vertical scaling with isolated threads, using all machine resources)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1><span style="font-size:1.2em">Some Elixir Highlights</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 473px; left: 244px; top: 210px;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <p style="text-align:start">Erlang, a language that is under usage since 1996.&nbsp;</p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">Some companies using Erlang:</span></p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">- Whatsapp</span></p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">- Facebook (Chat)</span></p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">- Amazon (SimpleDB)</span></p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">- Heroku</span></p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">- Ericsson (mobile network management)</span></p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">- TMobile (SMS)</span></p>
+
+                <p style="text-align:start"><span style="font-size:0.7em">- WoW server backend</span></p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 82px; height: auto;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <h1><span style="font-size:1.2em">Some Elixir Highlights</span></h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 611px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>Observer UI - debugging tool</p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 806px; height: 301px; left: 77px; top: 244px;">
+              <div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1384" data-natural-height="516" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6774862/pasted-from-clipboard.png"></div>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <h1>Okay, SHOW ME TE CODE</h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 495px; height: 520px; left: 233px; top: 167px;">
+              <div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="360" data-natural-height="378" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6774520/catreview.gif"></div>
+            </div>
+          </section>
+          <section data-background-color="#f2ebfe">
+            <div class="sl-block" data-block-type="text" style="width: 384px; left: 288px; top: 81px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Basic types</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="width: 384px; left: 288px; top: 258px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11; line-height: 1.833;" data-has-line-height="">
+                <ul>
+                  <li><span style="font-size:0.9em"><strong>Integers:</strong> <span style="font-size:0.9em">1</span></span></li>
+                  <li><span style="font-size:0.9em"><strong>Floats:</strong> <span style="font-size:0.9em">1.23456</span></span></li>
+                  <li><span style="font-size:0.9em"><strong>Ranges:</strong> <span style="font-size:0.9em">1..100</span></span></li>
+                  <li><span style="font-size:0.9em"><strong>Regexp</strong>&nbsp;<span style="font-size:0.9em">~r{myregexp}</span></span></li>
+                  <li><span style="font-size:0.9em"><strong>Atoms/symbols(ruby):</strong> &nbsp;<span style="font-size:0.9em">:hello<span style="font-size:15px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; boolean values and nil are also atoms</span></span></span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#f2ebfe">
+            <div class="sl-block" data-block-type="text" style="width: 384px; left: 288px; top: 81px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Collection types</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="width: 384px; left: 288px; top: 279px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 12; line-height: 1.846;" data-has-line-height="">
+                <ul>
+                  <li>
+                    <strong>Tuples:</strong>&nbsp; {:ok, 1}</li>
+                  <li>
+                    <strong>Linked list:</strong> &nbsp;[1,2,3,4]</li>
+                  <li>
+                    <strong>Maps:</strong>&nbsp; %{key: "value"}</li>
+                  <li>
+                    <strong>Binaries:</strong>&nbsp; &lt;&lt;70, 79, &nbsp;...&gt;&gt;</li>
+                </ul>
+
+                <p><span style="font-size:15px"><span style="font-size:0.9em">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Strings are encoded as binaries</span></span></p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#f2ebfe">
+            <div class="sl-block" data-block-type="text" style="width: 384px; left: 288px; top: 81px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Other types</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="width: 836px; left: 62px; top: 331px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11; line-height: 1.846;" data-has-line-height="">
+                <ul>
+                  <li>
+                    <strong>Processes: </strong>#PID&lt;0.43.0&gt;</li>
+                  <li>
+                    <strong>Ports: </strong>Port&lt;0.1444&gt;</li>
+                  <li>
+                    <strong>Functions:</strong>&nbsp;<strong>​</strong>add = fn (a, b) -&gt; a + b end ; add.(1, 2)</li>
+                </ul>
+
+                <div>&nbsp;</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 320px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align: center;">PATTERN MATCHING</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 517px; height: 483px; left: 222px; top: 147px;">
+              <div class="sl-block-content" style="z-index: 13;"><img data-natural-width="517" data-natural-height="483" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6766024/patternmatching2-removebg-preview__1_.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 320px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align: center;">PATTERN MATCHING</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 585px; height: 350px; left: 188px; top: 225px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers=""># a bound to 1
+                    iex(1)&gt; a = 1
+                    1
+
+                    #Is not an assignement
+                    iex(2)&gt; 1 = a
+                    1
+
+                    #It's a matching
+                    iex(3)&gt; 2 = a
+                    ** (MatchError) no match of right hand side value: 1
+
+                    # Pin operator, avoid variable binding
+                    iex(4)&gt; ^a = 4
+                    ** (MatchError) no match of right hand side value: 1</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 320px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align: center;">PATTERN MATCHING</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 900px; height: 548px; left: 31px; top: 107px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers=""># complex_structures_pattern_matching.exs
+
+                    iex(3)&gt; [c, d, e] = [1, 2, 3]
+                    [1, 2, 3]
+                    iex(4)&gt; c
+                    1
+                    iex(5)&gt; d
+                    2
+                    iex(6)&gt; e
+                    3
+
+                    iex(7)&gt; [f, _] = [1, 3]
+                    [1, 3]
+                    iex(8)&gt; f
+                    1
+
+                    iex(9)&gt; {result, value} = {:ok,2}
+                    {:ok, 2}
+                    iex(10)&gt; value
+                    2
+                    iex(11)&gt; {:ok, value} = {:notok, 2}
+                    ** (MatchError) no match right hand side value: {:notok,2}
+
+                    iex(12)&gt; %{name: person_name} = %{name: "Fred", age: "95", favorite_color: "Taupe"}
+                    %{name: "Fred", age: "95", favorite_color: "Taupe"
+                    iex(13)&gt; person_name
+                    "Fred"</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align: center;">PATTERN MATCHING</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 720px; height: 224px; left: 120px; top: 140px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre><code data-line-numbers=""># Elixir Httpoison HTTP client
+                    case HTTPoison.get(url) do
+                    {:ok, %HTTPoison.Response{status_code: 200, body: body}} -&gt;
+                    IO.puts body
+                    {:ok, %HTTPoison.Response{status_code: 404}} -&gt;
+                    IO.puts "Not found :("
+                    {:ok, %HTTPoison.Response{status_code: status_code}} -&gt;
+                    IO.puts "Status code " &lt;&gt; status_code
+                    {:error, %HTTPoison.Error{reason: reason}} -&gt;
+                    IO.inspect reason
+                    end</code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 720px; height: 303px; left: 120px; top: 378px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;">
+                <pre><code data-line-numbers="">require 'net/http'
+
+                    begin
+                    response = Net::HTTP.get_response('example.com', '/index.html')
+
+                    if response.code == "200"
+                    puts response.body
+                    elsif response.code = "404"
+                    puts "Not found :("
+                    else
+                    puts "Status code " + response.code
+                    end
+                    rescue SocketError =&gt; error
+                    puts error.inspect
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 442px; left: 229px; top: 70px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align: center;">Anonymous Functions</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 475px; height: 181px; left: 213px; top: 309px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;">
+                <pre class="elixir"><code data-line-numbers="">iex&gt; sum = fn (a, b) -&gt; a + b end
+                    iex&gt; sum.(2, 3)
+                    5
+
+                    # Also exist &amp; Shorthand operator
+                    iex&gt; sum = &amp;(&amp;1 + &amp;2)
+                    iex&gt; sum.(2, 3)
+                    5</code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 569px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>Functions are a kind of variable</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 289px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align: center;">Pipe operator</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 475px; height: 257px; left: 212px; top: 266px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre><code data-line-numbers=""># add and multiply are imaginary functions
+                    one = 1
+
+                    five = sum(one, 4)
+                    ten = multiply(five, 2)
+
+                    ten = multiply(sum(one, 4))
+
+                    ten =
+                    one
+                    |&gt; sum(4)
+                    |&gt; multiply(2)</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 530px; left: 215px; top: 31px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h1 style="text-align: center;"><span style="font-size:1.0em">INMUTABLE Variables</span></h1>
+
+                <h1>&nbsp;</h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 468px; height: 442px; left: 246px; top: 164px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers=""># inmutability.exs
+
+                    iex(9)&gt; defmodule Modificator do
+                    ...(9)&gt;   def add_one(variable) do
+                    ...(9)&gt;     variable = variable + 1
+                    ...(9)&gt;   end
+                    ...(9)&gt; end
+                    warning: variable "variable" is unused ...
+                    iex:11: Modificator.add_one/1
+
+                    {:module, Modificator,
+                    &lt;&lt;70, 79, 82, 49, 0, 0, 4, 116, 66, 69...
+                    0, 0, 0, 14, 18, 69, 108, 105, 120, ...
+                    105, 99, 97, 116, 111, 114, 8, 95, 9...
+
+
+                    iex(10)&gt; inmutable = 2
+                    2
+                    iex(11)&gt; Modificator.add_one(inmutable)
+                    3
+                    iex(12)&gt; inmutable
+                    2
+                </code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 530px; left: 215px; top: 31px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h1 style="text-align:center">Named functions</h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 468px; height: 274px; left: 246px; top: 235px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers="">defmodule Greeter do
+                    def hello(name) do
+                    "Hello " &lt;&gt; name
+                    end
+                    end
+
+                    iex&gt; Greeter.hello(:alice)
+                    "Hello alice"
+
+                    #Shorter(one-liner) version
+                    defmodule Greeter do
+                    def hello(name), do: "Hello " &lt;&gt; name
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 530px; left: 215px; top: 31px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h1 style="text-align:center">Named functions</h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 788px; height: 501px; left: 112px; top: 160px;">
+              <div class="sl-block-content notranslate fragment" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;" data-fragment-index="0">
+                <pre class="elixir"><code data-line-numbers="">defmodule Calculator do
+                    def multiply_by_two([]), do: return []
+
+                    def multiply_by_two([head | tail]) do
+                    [head * 2 | multiply_by_two(tail)]
+                    end
+                    end
+
+                    iex&gt; Calculator.multiply_by_two([])
+                    []
+
+                    iex&gt; Calculator.multiply_by_two([1, 2, 3])
+                    [2, 4, 6]
+                </code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 174px; top: 109px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>Pattern matching power It's over 9000</p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 600px; height: 438px; left: 174px; top: 178px;">
+              <div class="sl-block-content fragment fade-out" style="z-index: 10; border-style: solid; border-width: 1px; border-radius: 9px;" data-fragment-index="0"><img data-natural-width="1280" data-natural-height="720" style="left: -106px; top: 0px; width: 806px; height: 453px;" data-crop-x="0.131514" data-crop-y="0" data-crop-width="0.744417" data-crop-height="0.966887" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6766235/itsover1000.jpg"></div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 530px; left: 215px; top: 31px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h1 style="text-align:center">Named functions</h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 788px; height: 274px; left: 80px; top: 226px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;">
+                <pre class="elixir"><code data-line-numbers="">defmodule Greeter do
+                    def hello(), do: "Hi!"   # hello/0
+                    def hello(name), do: "Hello, " &lt;&gt; name   # hello/1
+                    def hello(name1, name2), do: "Hello, #{name1} and #{name2}"   # hello/2
+                    end
+
+                    iex&gt; Greeter.hello
+                    "Hi!"
+                    iex&gt; Greeter.hello("Bob")
+                    "Hello, Bob"
+                    iex&gt; Greeter.hello("Bob", "Alice")
+                    "Hello, Bob and Alice"</code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 174px; top: 109px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>Function arity, because &nbsp;quantity matters</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Named Functions</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 662px; height: 250px; left: 149px; top: 295px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers="">defmodule Greeter do
+                    def hello(:alice), do: "Hello Alice!"
+
+                    def hello(name) do
+                    "Hello #{name}"
+                    end
+                    end
+
+                    iex(9)&gt; Greeter.hello(:alice)
+                    "Hello Alice!"
+                    iex(10)&gt; Greeter.hello(:anna)
+                    "Hello anna"
+                </code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 178px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>Function matching by parameter</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Named Functions</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 662px; height: 460px; left: 149px; top: 190px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers="">defmodule UserController do
+                    def update(%{id: id, name: user_name}) do
+                    IO.puts "Updating user with id " &lt;&gt; id &lt;&gt; " with name " &lt;&gt; user_name
+                    end
+
+                    def update(%{id: id}) do
+                    IO.puts "Nothing to update for user with id " &lt;&gt; id
+                    end
+
+                    def update(_) do
+                    IO.puts "Bad request!"
+                    end
+                    end
+
+                    iex(2)&gt; UserController.update(%{request: "body"})
+                    Bad request!
+                    :ok
+                    iex(3)&gt; UserController.update(%{id: "myid"})
+                    Nothing to update for user with id myid
+                    :ok
+                    iex(4)&gt; UserController.update(%{id: "myid", name: "Bob"})
+                    Updating user with id myid with name Bob
+                    :ok
+                </code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 107px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p><span style="font-size:1.0em">Function matching using signatures for complex parameters</span></p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Guards</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 546px; height: 250px; left: 207px; top: 170px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers="">defmodule Factorial do
+                    def of(0), do: 1
+                    def of(n) when n &lt; 0, do: :error
+                    def of(n) when is_number(n), do: n * of(n-1)
+                    def of(n), do: :error
+                    end
+
+                    iex(2)&gt; Factorial.of(-1)
+                    :error
+                    iex(5)&gt; Factorial.of("one")
+                    :error
+                </code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 107px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>When PM is not enough...</p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 658px; height: 168px; left: 151px; top: 439px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 14;">
+                <pre class="elixir"><code data-line-numbers="">class Factorial do
+                    def of(n)
+                    return :error if n.blank? || !n.is_a?(Integer) || n &lt; 0
+                    return 1 if n == 0
+
+                    n * of(n-1)
+                    end
+                    end
+                </code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Macros</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 158px; top: 140px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>Elixir provides a way to write macros, a good example of macros is "if", "else" and "unless". All of them rely on case.</p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 847px; height: 405px; left: 57px; top: 270px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 14;">
+                <pre class="elixir"><code data-line-numbers=""># https://elixir-lang.org/getting-started/meta/macros.html
+
+                    defmodule Unless do
+                    def fun_unless(clause, do: expression) do
+                    if(!clause, do: expression)
+                    end
+
+                    defmacro macro_unless(clause, do: expression) do
+                    quote do
+                    if(!unquote(clause), do: unquote(expression))
+                    end
+                    end
+                    end
+
+                    iex(7)&gt; require Unless
+                    iex(8)&gt; Unless.macro_unless true, do: IO.puts "this should never be printed"
+                    nil
+                    iex(9)&gt; Unless.macro_unless false, do: IO.puts "this should never be printed"
+                    this should never be printed
+                    :ok
+                </code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Macros</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 665px; left: 148px; top: 373px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>Be carefull, "<strong>explicit is better than implicit</strong><span style="font-size:14.4px">. </span></p>
+
+                <p><strong>Clear code is better than concise code."</strong></p>
+
+                <p><span style="color:#FFFFFF"><strong>Macros are always the latest option!</strong></span></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 226px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>Macros are usually used by libraries.</p>
+
+                <p>Is harder to write macros than normal code.</p>
+
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Phoenix</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 667px; left: 180px; top: 177px;">
+              <div class="sl-block-content" style="z-index: 12; line-height: 1.82;" data-has-line-height="">
+                <ul>
+                  <li><span style="font-size:0.9em">Phoenix is one of the main web frameworks</span></li>
+                  <li><span style="font-size:0.9em">Follows MVC</span></li>
+                  <li><span style="font-size:0.9em">Inspired in Ruby on Rails</span></li>
+                  <li><span style="font-size:0.9em">High performance and focused on developer productivity</span></li>
+                  <li><span style="font-size:0.9em">Modular, uses a multi-layer system designed to be flexible using other libraries (Plug, Ecto and Cowboy) </span></li>
+                  <li><span style="font-size:0.9em">Includes Websocket management (Channels)</span></li>
+                </ul>
+
+                <p><span style="font-size:0.9em">​</span><a href="https://phoenixframework.readme.io/" target="_blank">https://phoenixframework.readme.io/</a></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 201px; height: 201px; left: 500px; top: -13px;">
+              <div class="sl-block-content" style="z-index: 13;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Phoenix</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 740px; left: 130px; top: 140px;">
+              <div class="sl-block-content" style="z-index: 12; line-height: 1.82;" data-has-line-height="">
+                <p><strong>Routing</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 500px; top: -13px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 13;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 728px; height: 414px; left: 136px; top: 227px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 14;">
+                <pre class="elixir"><code data-line-numbers="">defmodule HelloPhoenix.Router do
+                    use HelloPhoenix.Web, :router
+
+                    pipeline :browser do
+                    plug :accepts, ["html"]
+                    plug :fetch_session
+                    plug :fetch_flash
+                    plug :protect_from_forgery
+                    plug :put_secure_browser_headers
+                    end
+
+                    pipeline :api do
+                    plug :accepts, ["json"]
+                    end
+
+                    scope "/", HelloPhoenix do
+                    pipe_through :browser # Use the default browser stack
+
+                    get "/", PageController, :index
+                    end
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Phoenix</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 740px; left: 110px; top: 140px;">
+              <div class="sl-block-content" style="z-index: 11; line-height: 1.82;" data-has-line-height="">
+                <p><strong>Controllers</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 500px; top: -13px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 12;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 501px; height: 197px; left: 230px; top: 322px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13;">
+                <pre class="elixir"><code data-line-numbers="">defmodule HelloPhoenix.PageController do
+                    use HelloPhoenix.Web, :controller
+
+                    def index(conn, _params) do
+                    render conn, "index.html"
+                    end
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Phoenix</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 740px; left: 110px; top: 140px;">
+              <div class="sl-block-content" style="z-index: 11; line-height: 1.82;" data-has-line-height="">
+                <p><strong>Channels: Elixir code</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 500px; top: -13px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 12;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 783px; height: 499px; left: 89px; top: 194px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13;">
+                <pre class="elixir"><code data-line-numbers="">defmodule HelloPhoenix.Endpoint do
+                    use Phoenix.Endpoint, otp_app: :hello_phoenix
+
+                    socket "/socket", HelloPhoenix.UserSocket
+                    ...
+                    end
+
+                    defmodule HelloPhoenix.UserSocket do
+                    use Phoenix.Socket
+
+                    ## Channels
+                    channel "room:*", HelloPhoenix.RoomChannel
+                    ...
+                    end
+
+                    defmodule HelloPhoenix.RoomChannel do
+                    use Phoenix.Channel
+
+                    def join("room:lobby", _message, socket) do
+                    {:ok, socket}
+                    end
+                    def join("room:" &lt;&gt; _private_room_id, _params, _socket) do
+                    {:error, %{reason: "unauthorized"}}
+                    end
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Phoenix</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 740px; left: 110px; top: 140px;">
+              <div class="sl-block-content" style="z-index: 11; line-height: 1.82;" data-has-line-height="">
+                <p><strong>Channels: JS code</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 500px; top: -13px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 12;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 783px; height: 338px; left: 110px; top: 270px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13;">
+                <pre class="elixir"><code data-line-numbers="">let channel           = socket.channel("room:lobby", {})
+                    let chatInput         = document.querySelector("#chat-input")
+                    let messagesContainer = document.querySelector("#messages")
+
+                    chatInput.addEventListener("keypress", event =&gt; {
+                    if(event.keyCode === 13){
+                    channel.push("new_msg", {body: chatInput.value})
+                    chatInput.value = ""
+                    }
+                    })
+
+                    channel.join()
+                    .receive("ok", resp =&gt; { console.log("Joined successfully", resp) })
+                    .receive("error", resp =&gt; { console.log("Unable to join", resp) })
+
+                    export default socket</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Phoenix</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 740px; left: 130px; top: 140px;">
+              <div class="sl-block-content" style="z-index: 11; line-height: 1.82;" data-has-line-height="">
+                <p><strong>EEX templates</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 500px; top: -13px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 12;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 501px; height: 197px; left: 230px; top: 322px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13;">
+                <pre class="elixir"><code data-line-numbers="">&lt;div class="jumbotron"&gt;
+                    &lt;p&gt;&lt;%= handler_info @conn %&gt;&lt;/p&gt;
+
+                    &lt;h3&gt;Keys for the conn Struct&lt;/h3&gt;
+
+                    &lt;%= for key &lt;- connection_keys @conn do %&gt;
+                    &lt;%= render "key.html", key: key %&gt;
+                    &lt;% end %&gt;
+                    &lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 181px; top: 226px;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <p style="text-align: left;"><strong>to start a new project: </strong></p>
+
+                <ul>
+                  <li>mix archive.install hex phx_new 1.4.10</li>
+                  <li>mix phoenix.new hello_world</li>
+                  <li>mix phoenix.server</li>
+                </ul>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 13;">
+                <h2 style="text-align:center">Phoenix</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 201px; height: 201px; left: 500px; top: -13px;">
+              <div class="sl-block-content" style="z-index: 14;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+
+
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Phoenix Liveview</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 572px; top: -15px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 12;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 120px; top: 101px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>AKA <strong>kill-your-javascript</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 839px; left: 61px; top: 630px;">
+              <div class="sl-block-content" style="z-index: 14;">
+                <p>Example: <a href="https://elixirschool.com/blog/phoenix-live-view/" target="_blank">https://elixirschool.com/blog/phoenix-live-view/</a></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="video" style="min-width: 30px; min-height: 30px; width: 640px; height: 341px; left: 160px; top: 179.5px;">
+              <div class="sl-block-content" style="z-index: 15;" data-media-id="6774709" data-video-thumb="https://s3.amazonaws.com/media-p.slid.es/videos/1178947/xlodsksc/live_view_thumb_00001.jpg"><video playsinline="" controls="controls" poster="https://s3.amazonaws.com/media-p.slid.es/videos/1178947/xlodsksc/live_view_thumb_00001.jpg" data-autoplay="" loop="loop" data-paused-by-reveal="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/videos/1178947/xlodsksc/live_view.mp4"></video></div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+
+
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Phoenix Liveview</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 572px; top: -15px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 11;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 120px; top: 101px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>AKA <strong>kill-your-javascript</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 839px; left: 61px; top: 630px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p>Example: <a href="https://elixirschool.com/blog/phoenix-live-view/" target="_blank">https://elixirschool.com/blog/phoenix-live-view/</a></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 692px; height: 171px; left: 135px; top: 195px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 14;">
+                <pre class="elixir"><code data-line-numbers="">&lt;div&gt;
+                    &lt;div class&gt;
+                    &lt;button phx-click="github_deploy"&gt;Deploy to GitHub&lt;/button&gt;
+                    &lt;div class="github-deploy"&gt;
+                    Status: &lt;%= @deploy_step %&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 692px; height: 175px; left: 135px; top: 385px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 15;">
+                <pre class="elixir"><code data-line-numbers="">defmodule MyApp.GithubDeployView do
+                    use Phoenix.LiveView
+
+                    def render(assigns) do
+                    MyApp.PageView.render("github_deploy.html", assigns)
+                    end
+                    ...
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+
+
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Phoenix Liveview</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 572px; top: -15px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 11;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 120px; top: 101px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>AKA <strong>kill-your-javascript</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 766px; height: 529px; left: 97px; top: 163px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 14;">
+                <pre class="elixir"><code data-line-numbers="">def handle_event("github_deploy", _value, socket) do
+                    :ok = MyApp.start_deploy()
+                    send(self(), :create_org)
+                    {:noreply, assign(socket, deploy_step: "Starting deploy...")}
+                    end
+
+                    def handle_info(:create_org, socket) do
+                    {:ok, org} = MyApp.create_org()
+                    send(self(), {:create_repo, org})
+                    {:noreply, assign(socket, deploy_step: "Creating GitHub org...")}
+                    end
+
+                    def handle_info({:create_repo, org}, socket) do
+                    {:ok, repo} = MyApp.create_repo(org)
+                    send(self(), {:push_contents, repo})
+                    {:noreply, assign(socket, deploy_step: "Creating GitHub repo...")}
+                    end
+
+                    def handle_info({:push_contents, repo}, socket) do
+                    :ok = MyApp.push_contents(repo)
+                    send(self(), :done)
+                    {:noreply, assign(socket, deploy_step: "Pushing to repo...")}
+                    end
+
+                    def handle_info(:done, socket) do
+                    {:noreply, assign(socket, deploy_step: "Done!")}
+                    end</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#ffffff">
+
+
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 259px; top: 34px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Phoenix Liveview</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 201px; height: 201px; left: 572px; top: -15px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 11;"><img data-natural-width="500" data-natural-height="500" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767039/1_THRh4--2uAqVuBM_Iab78A-removebg-preview.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 120px; top: 101px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>AKA <strong>kill-your-javascript</strong></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 374px; height: 381px; left: 293px; top: 221px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="374" data-natural-height="381" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6774682/pasted-from-clipboard.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 277px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Ecto</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 674px; left: 147px; top: 190px;">
+              <div class="sl-block-content" style="z-index: 12; background-color: rgba(136, 136, 136, 0.37); padding: 27px;" dir="ui">
+                <p>It's the main ORM for Elixir apps, acts as <span style="text-align:start">database wrapper and query generator</span></p>
+
+                <ul>
+                  <li>Standardized API for multiple DB engines</li>
+                  <li>Standalone</li>
+                  <li>Changeset oriented</li>
+                </ul>
+              </div>
+              <grammarly-extension class="_1KJtL" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 11;">
+                <div data-grammarly-part="highlights" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 585px; height: 456.3px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; top: 0px; left: 0px;">
+                      <div style="height: 1448px; width: 1880px;">
+                        <div>
+                          <div class="_3F-Wk _3mEyK _2Qe2S" style="top: 0.975006px; left: 415.35px; width: 58.5px; height: 35.1px;"></div>
+                        </div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-grammarly-part="button" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
+                  <div style="box-sizing: content-box; top: 0px; left: 0px; width: 585px; height: 456.3px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                    <div style="position: absolute; transform: translate(-100%, -100%); top: 452.3px; left: 581px; width: auto; height: auto; pointer-events: all;">
+                      <div style="flex-direction: row; display: flex;">
+                        <div style="position: relative;">
+                          <div class="_2okjE _1-uTj">
+                            <div class="_3r4Mt"><span class="_1JBIl j30Wa _3UORh _3_knm"></span></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="_5WizN _1y8ub _34Jb6 _1QzSN">
+                            <div class="_3YmQx">
+                              <div title="Found 1 error in text" class="_3QdKe">1</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </grammarly-extension>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 133px; height: 133px; left: 466px; top: 4px;">
+              <div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="336" data-natural-height="336" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767049/19973437.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 498px; height: 529px; left: 240px; top: 132px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers="">defmodule MyApp.User do
+                    use MyApp, :model
+
+                    schema "users" do
+                    field :email, :string
+                    field :first_name, :string
+                    field :last_name, :string
+
+                    timestamps()
+
+                    # Associations
+                    has_many :posts, MyApp.Post
+                    end
+
+                    def changeset(struct, params \\ %{}) do
+                    struct
+                    |&gt; cast(params, user_params())
+                    |&gt; validate_required(user_params())
+                    |&gt; unique_constraint(:email)
+                    end
+
+                    defp user_params do
+                    [:email,
+                    :first_name,
+                    :last_name]
+                    end
+                    end</code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 661px;">
+              <div class="sl-block-content" style="z-index: 12; color: rgb(255, 255, 255);">
+                <p><span style="font-size:0.7em">An example of a Ecto model</span></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 277px; top: 19px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 14;">
+                <h2 style="text-align:center">Ecto</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 133px; height: 133px; left: 460px; top: 0px;">
+              <div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="336" data-natural-height="336" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767049/19973437.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Ecto Changesets</h2>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="code" style="width: 862px; height: 253px; left: 49px; top: 154px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;">
+                <pre class="elixir"><code data-line-numbers="">
+                    def validated_changeset(struct, params \\ %{}) do
+                    struct
+                    |&gt; cast(params, user_params())
+                    |&gt; validate_required(user_params())
+                    |&gt; validate_format(:email, ~r/@/)
+                    |&gt; unique_constraint(:email)
+                    |&gt; unique_constraint(:username)
+                    |&gt; validate_length(:password, min: 6, max: 100)
+                    end
+
+                </code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 862px; height: 102px; left: 49px; top: 473px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13;">
+                <pre class="elixir"><code data-line-numbers="">changeset = User.changeset(%User{}, %{email: "mary@example", name: "Mary"})
+                    {:error, changeset} = Repo.insert(changeset)
+                    changeset.errors #=&gt; [email: {"is invalid", []}, password: {"can't be blank", []}]</code></pre>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1>Hello DISTRIBUtED COMPUTING!</h1>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 953px; height: 224px; left: 4px; top: 186px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers="">➜  ~ iex --sname bob
+                    Erlang/OTP 22 [erts-10.5.2] [source] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:1] [hipe]
+
+                    Interactive Elixir (1.9.2) - press Ctrl+C to exit (type h() ENTER for help)
+                    iex(bob@JTAG-L470)1&gt; Node.list
+                    []
+                    iex(bob@JTAG-L470)2&gt; Node.list
+                    [:"alice@JTAG-L470"]
+                    iex(bob@JTAG-L470)3&gt; defmodule Hello do
+                    ...(bob@JTAG-L470)3&gt;   def world, do: IO.puts "hello world"
+                    ...(bob@JTAG-L470)3&gt; end
+                </code></pre>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 953px; height: 268px; left: 4px; top: 410px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13;">
+                <pre class="elixir"><code data-line-numbers="">➜  ~ iex --sname alice
+                    Erlang/OTP 22 [erts-10.5.2] [source] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:1] [hipe]
+
+                    Interactive Elixir (1.9.2) - press Ctrl+C to exit (type h() ENTER for help)
+                    iex(alice@JTAG-L470)1&gt; Node.list
+                    []
+                    iex(alice@JTAG-L470)2&gt; Node.ping :"bob@JTAG-L470"
+                    :pong
+                    iex(alice@JTAG-L470)3&gt; Hello.world
+                    ** (UndefinedFunctionError) function Hello.world/0 is undefined (module Hello is not available)
+                    Hello.world()
+                    iex(alice@JTAG-L470)4&gt; Node.spawn_link :"bob@JTAG-L470", fn -&gt; Hello.world end
+                    hello world
+                </code></pre>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;">
+              <div class="sl-block-content" style="z-index: 10;">
+                <h1>And what about the performance?</h1>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Benchmarks</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="code" style="width: 773px; height: 568px; left: 94px; top: 117px;">
+              <div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;">
+                <pre class="elixir"><code data-line-numbers="">class Caller
+                    def self.call(counter)
+                    puts Time.now.to_f if counter == 0
+                    Thread.new { Caller.call(counter - 1) }
+                    end
+                    end
+
+                    Time.now.to_f
+                    Caller.call(100000)
+                    Caller.call(10000000) # PC hangs
+
+                    1573602970.813744 - 1573602966.7333193 = 4.08 seconds for 100000 threads
+
+                    defmodule Caller do
+                    def call(0) do
+                    IO.puts :os.system_time(:millisecond)
+                    end
+
+                    def call(counter) do
+                    spawn(Caller, :call, [counter - 1])
+                    end
+                    end
+
+                    :os.system_time(:millisecond)
+                    spawn(Caller, :call, [100000])
+                    spawn(Caller, :call, [10000000])
+
+                    1573603046421 - 1573603046271 = 150ms for 100000 threads
+                    1573603248451 - 1573603264607 = 12.156 seconds for 10 million threads</code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Benchmarks</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 733px; left: 114px; top: 630px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>Source: <a href="https://github.com/mroth/phoenix-showdown" target="_blank">https://github.com/mroth/phoenix-showdown</a></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="table" style="height: auto; min-width: 160px; min-height: 30px; width: 800px; left: 81px; top: 140px;">
+              <div class="sl-block-content" data-table-rows="10" data-table-cols="4" style="z-index: 13; font-size: 70%; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" data-table-has-header="true" data-table-border-width="2px">
+                <table>
+                  <tbody>
+                    <tr>
+                      <th style="border-width: 2px;">Framework</th>
+                      <th style="border-width: 2px;">Throughput (req/s)<br>
+                        &nbsp;</th>
+                      <th style="border-width: 2px;">Latency (ms)<br>
+                        &nbsp;</th>
+                      <th style="border-width: 2px;">Consistency (σ ms)</th>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Gin</td>
+                      <td style="border-width: 2px;">59001.07</td>
+                      <td style="border-width: 2px;">1.84</td>
+                      <td style="border-width: 2px;">1.35</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Phoenix</td>
+                      <td style="border-width: 2px;">31417.81</td>
+                      <td style="border-width: 2px;">3.52</td>
+                      <td style="border-width: 2px;">3.50</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Express Cluster</td>
+                      <td style="border-width: 2px;">26244.35</td>
+                      <td style="border-width: 2px;">3.92</td>
+                      <td style="border-width: 2px;">3.25</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Martini</td>
+                      <td style="border-width: 2px;">12493.48</td>
+                      <td style="border-width: 2px;">10.15</td>
+                      <td style="border-width: 2px;">10.70</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Sinatra</td>
+                      <td style="border-width: 2px;">8334.84</td>
+                      <td style="border-width: 2px;">7.46</td>
+                      <td style="border-width: 2px;">3.38</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Express</td>
+                      <td style="border-width: 2px;">9477.14</td>
+                      <td style="border-width: 2px;">10.56</td>
+                      <td style="border-width: 2px;">1.39</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Rails</td>
+                      <td style="border-width: 2px;">3452.58</td>
+                      <td style="border-width: 2px;">17.96</td>
+                      <td style="border-width: 2px;">7.73</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Plug</td>
+                      <td style="border-width: 2px;">53815.76</td>
+                      <td style="border-width: 2px;">2.67</td>
+                      <td style="border-width: 2px;">4.07</td>
+                    </tr>
+                    <tr>
+                      <td style="border-width: 2px;">Play</td>
+                      <td style="border-width: 2px;">66405.81</td>
+                      <td style="border-width: 2px;">2.72</td>
+                      <td style="border-width: 2px;">10.25</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 811px; left: 75px; top: 583px;">
+              <div class="sl-block-content" style="z-index: 14;">
+                <p>Machine: <span style="color:rgb(36, 41, 46); text-align:start">iMac Intel Core i7 (4.0 GHz 4 Cores) 32 GB RAM.</span></p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Benchmarks</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 733px; left: 114px; top: 591px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>Source: <a href="https://medium.com/@elviovicosa/phoenix-vs-rails-benchmark-2019-f0e68336d557" target="_blank">https://medium.com/@elviovicosa/phoenix-vs-rails-benchmark-2019-f0e68336d557</a></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 192px; top: 163px;">
+              <div class="sl-block-content" style="z-index: 14;">
+                <p style="color: rgba(0, 0, 0, 0.84); text-align: start;"><strong>How was tested:</strong></p>
+
+                <ul>
+                  <li>It handles a single route (GET /)</li>
+                  <li>The controller handling the requests assigns the value of the current DateTime</li>
+                  <li>The controller renders an HTML template (using the default layout)</li>
+                  <li>The HTML template outputs the value assigned by the controller</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2 style="text-align:center">Benchmarks</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 733px; left: 114px; top: 591px;">
+              <div class="sl-block-content" style="z-index: 12;">
+                <p>Source: <a href="https://medium.com/@elviovicosa/phoenix-vs-rails-benchmark-2019-f0e68336d557" target="_blank">https://medium.com/@elviovicosa/phoenix-vs-rails-benchmark-2019-f0e68336d557</a></p>
+              </div>
+            </div>
+
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 759px; left: 121px; top: 121px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p><strong>Transactions</strong>: requests processed in 10 second</p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 600px; height: 350px; left: 180px; top: 192px;">
+              <div class="sl-block-content" style="z-index: 14;"><img data-natural-width="600" data-natural-height="350" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6777310/pasted-from-clipboard.png"></div>
+            </div>
+          </section>
+          <section data-background-color="#cabbe4">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2 style="text-align:center">Benchmarks</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 733px; left: 114px; top: 591px;">
+              <div class="sl-block-content" style="z-index: 11;">
+                <p>Source: <a href="https://medium.com/@elviovicosa/phoenix-vs-rails-benchmark-2019-f0e68336d557" target="_blank">https://medium.com/@elviovicosa/phoenix-vs-rails-benchmark-2019-f0e68336d557</a></p>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="image" style="width: 600px; height: 350px; left: 180px; top: 203px; min-width: 1px; min-height: 1px;">
+              <div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="600" data-natural-height="350" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6774564/pasted-from-clipboard.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 759px; left: 121px; top: 121px;">
+              <div class="sl-block-content" style="z-index: 13;">
+                <p><strong>Throughput</strong>: average bytes/s per concurrent request</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#444444">
+            <div class="sl-block" data-block-type="text" style="width: 322px; left: 319px; top: 33px; height: auto;">
+              <div class="sl-block-content" style="text-align: left; z-index: 11; color: rgb(255, 255, 255);">
+                <h2 style="text-align:center">HOMEWORK</h2>
+              </div>
+            </div>
+            <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 173px; top: 198px;">
+              <div class="sl-block-content" style="z-index: 12; color: rgb(238, 238, 238);">
+                <p>OTP</p>
+
+                <p>Protocols</p>
+
+                <p>Processes</p>
+
+                <p>Exceptions</p>
+
+                <p>Supervisors</p>
+
+                <p>Tasks</p>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#444444" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/1178947/images/6767002/thats-all-folks-eso-es-todo-amigos.jpg">
+          </section>
+        </div>
+      </div>
+    </div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
